@@ -7,8 +7,8 @@ export class TennisGame2 implements TennisGame {
   P1res: string = '';
   P2res: string = '';
 
-  private player1Name: string;
-  private player2Name: string;
+  public player1Name: string;
+  public player2Name: string;
 
   constructor(player1Name: string, player2Name: string) {
     this.player1Name = player1Name;
