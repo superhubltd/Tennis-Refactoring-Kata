@@ -6,6 +6,11 @@ export class TennisGame4 implements TennisGame {
   private readonly ONE_POINT:number = 1;
   private readonly DEUCE_POINT_CHECKING:number = 3;
   private readonly POINTS:string[] = ['Love', 'Fifteen', 'Thirty', 'Forty'];
+  private readonly DEUCE_POINT:string = "Deuce";
+  private readonly TIE_POINT:string = "All";
+  private readonly ADVANTAGE:string = "Advantage";
+  private readonly WINNER:string = "Win for";
+  private readonly DASH:string = "-";
 
   private player1Score: number = 0;
   private player2Score: number = 0;
@@ -20,18 +25,18 @@ export class TennisGame4 implements TennisGame {
   getScore(): string {
     // Check for Deuce
     if(this.player1Score === this.player2Score && this.player1Score >= this.DEUCE_POINT_CHECKING)
-      return "Deuce";
+      return this.DEUCE_POINT;
 
     // Check for score under DEUCE_POINT_CHECKING
     if(this.player1Score <= this.DEUCE_POINT_CHECKING && this.player2Score <= this.DEUCE_POINT_CHECKING) 
-      return this.player1Score === this.player2Score ? `${this.parseScore(this.player1Score)}-All` : 
-                                                       `${this.parseScore(this.player1Score)}-${this.parseScore(this.player2Score)}`;
+      return this.player1Score === this.player2Score ? `${this.parseScore(this.player1Score)}${this.DASH}${this.TIE_POINT}` : 
+                                                       `${this.parseScore(this.player1Score)}${this.DASH}${this.parseScore(this.player2Score)}`;
 
     let leadingPlayer = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
     let difference = Math.abs(this.player1Score - this.player2Score);
 
     // Identify if the if it's a advantage or a win for the leading player
-    return difference === this.ONE_POINT ?  `Advantage ${leadingPlayer}` : `Win for ${leadingPlayer}`
+    return difference === this.ONE_POINT ?  `${this.ADVANTAGE} ${leadingPlayer}` : `${this.WINNER} ${leadingPlayer}`
   }
 
   wonPoint(playerName: string): void {
