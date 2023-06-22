@@ -41,9 +41,9 @@ export class TennisGame4 implements TennisGame {
 
   wonPoint(playerName: string): void {
     if (playerName === this.player1Name)
-      this.player1Score += this.ONE_POINT;
+      this.player1Score++;
     else
-      this.player2Score += this.ONE_POINT;
+      this.player2Score++;
   }
 
   parseScore(point:number):string {
