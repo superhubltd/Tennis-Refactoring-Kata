@@ -6,8 +6,8 @@ namespace Tennis
     {
         private int player1Score;
         private int player2Score;
-        private string player1Name;
-        private string player2Name;
+        public string player1Name { get; set; }
+        public string player2Name { get; set; }
 
         public TennisGame5(string player1Name, string player2Name)
         {

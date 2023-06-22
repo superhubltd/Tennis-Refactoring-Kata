@@ -4,8 +4,8 @@ namespace Tennis
     {
         private int player2Points;
         private int player1Points;
-        private string player1Name;
-        private string player2Name;
+        public string player1Name { get; set; }
+        public string player2Name { get; set; }
         public static readonly string[] POINTS_NAMES = new[] { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
