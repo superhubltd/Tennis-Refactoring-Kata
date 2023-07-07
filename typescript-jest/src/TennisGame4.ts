@@ -20,6 +20,9 @@ export class TennisGame4 implements TennisGame {
   constructor(p1Name: string, p2Name: string) {
     this.player1Name = p1Name;
     this.player2Name = p2Name;
+    console.log(this.player1Name);
+    console.log(this.player1Name);
+    console.log(this.player1Name);
   }
 
   getScore(): string {
